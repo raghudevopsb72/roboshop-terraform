@@ -64,12 +64,13 @@ resource "aws_instance" "instance" {
   }
 }
 
-//
-//resource "aws_route53_record" "frontend" {
-//  zone_id = "Z03986262CQPCHNJNZM9L"
-//  name    = "frontend-dev.rdevopsb72.online"
-//  type    = "A"
-//  ttl     = 30
-//  records = [aws_instance.frontend.private_ip]
-//}
-//
+
+resource "aws_route53_record" "records" {
+  for_each               = var.components
+  zone_id = "Z03986262CQPCHNJNZM9L"
+  name    = "${each.value["name"]}-dev.rdevopsb72.online"
+  type    = "A"
+  ttl     = 30
+  records = [aws_instance.instance[each.value["name"]].private_ip]
+}
+
