@@ -3,6 +3,8 @@ bastion_cidr     = ["172.31.11.111/32"]
 default_vpc_id   = "vpc-0a8e3e6a0d6cb90d9"
 default_vpc_cidr = "172.31.0.0/16"
 default_vpc_rtid = "rtb-0b9a867762d6530ba"
+kms_arn          = "arn:aws:kms:us-east-1:633788536644:key/dce90622-5a23-4f82-a639-be841f534702"
+
 vpc = {
   main = {
     cidr_block = "10.0.0.0/16"
@@ -73,3 +75,10 @@ app = {
 }
 
 
+docdb = {
+  main = {
+    subnet_name    = "db"
+    allow_db_cidr  = "app"
+    engine_version = "4.0.0"
+  }
+}
