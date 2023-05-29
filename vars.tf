@@ -9,5 +9,6 @@ variable "default_vpc_rtid" {}
 variable "docdb" {}
 variable "rds" {}
 variable "elasticache" {}
+variable "rabbitmq" {}
 
 variable "kms_arn" {}
