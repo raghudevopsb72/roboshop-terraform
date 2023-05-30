@@ -114,3 +114,18 @@ rabbitmq = {
   }
 }
 
+
+alb = {
+  public = {
+    name           = "public"
+    subnet_name    = "public"
+    allow_alb_cidr = null
+    internal       = false
+  }
+  private = {
+    name           = "private"
+    subnet_name    = "private"
+    allow_alb_cidr = "web"
+    internal       = true
+  }
+}
