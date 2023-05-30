@@ -42,6 +42,7 @@ app = {
     desired_capacity = 1
     max_size         = 10
     min_size         = 1
+    app_port         = 80
   }
   catalogue = {
     name             = "catalogue"
@@ -51,6 +52,7 @@ app = {
     desired_capacity = 1
     max_size         = 10
     min_size         = 1
+    app_port         = 8080
   }
   //  cart = {
   //    name          = "cart"
