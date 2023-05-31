@@ -48,6 +48,7 @@ app = {
     app_port          = 80
     listener_priority = 1
     lb_type           = "public"
+    dns_name          = "dev"
   }
   catalogue = {
     name              = "catalogue"
